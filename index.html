@@ -97,7 +97,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-lg-8 text-center">
             <h2 class="text-white mt-0">Cards Cards Cards!</h2>
-            <hr class="divider divider-light" />
+            <hr class="divider" style="background-color: #6610f2" />
             <p class="text-white-75 mb-4">
               With over 150 cards and making more you can collect cards and when
               you get a set of cards you then unlock more cards. With screen
@@ -167,9 +167,12 @@
       </div>
     </section>
     <!-- Portfolio-->
-    <div id="portfolio">
+    <div id="portfolio" class="bg-primary p-3">
+      &nbsp; &nbsp; &nbsp;
       <div class="container-fluid p-0">
-        <div class="row g-0">
+        <h2 class="text-white text-center">The Wonders</h2>
+        <hr class="divider" style="background-color: #6610f2" />
+        <div class="row g-0 p-2">
           <div class="col-md-2 text-center">
             <a
               class="portfolio-box"
@@ -274,6 +277,123 @@
           </div>
         </div>
       </div>
+      &nbsp; &nbsp; &nbsp;
+    </div>
+    &nbsp; &nbsp; &nbsp;
+    <div>
+      <div class="container-fluid p-3">
+        <h2 class="text-center mt-0">Market Place</h2>
+        <hr class="divider" />
+        <div class="row g-0 text-center">
+          <ul
+            class="nav nav-tabs col-md-10 offset-md-1"
+            id="myTab"
+            role="tablist"
+          >
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="collapseOne-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#collapseOne"
+                type="button"
+                role="tab"
+                aria-controls="collapseOne"
+                aria-selected="true"
+              >
+                Common
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="collapseTwo-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#collapseTwo"
+                type="button"
+                role="tab"
+                aria-controls="collapseTwo"
+                aria-selected="false"
+              >
+                Uncommon
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="collapseThree-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#collapseThree"
+                type="button"
+                role="tab"
+                aria-controls="collapseThree"
+                aria-selected="false"
+              >
+                Rare & Epic
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active col-md-10 offset-md-1"
+            role="tabpanel"
+            aria-labelledby="collapseOne-tab"
+            id="collapseOne"
+            style="height: 500px; overflow-x: hidden; overflow-y: auto"
+          >
+            <table class="table table-bordered table-responsive-md">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Card Name</th>
+                  <th scope="col">Card ID</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody id="marketPricing"></tbody>
+            </table>
+          </div>
+          <div
+            id="collapseTwo"
+            class="tab-pane fade col-md-10 offset-md-1"
+            role="tabpanel"
+            aria-labelledby="collapseTwo-tab"
+            style="height: 500px; overflow-x: hidden; overflow-y: auto"
+          >
+            <table class="table table-bordered table-responsive-md">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Card Name</th>
+                  <th scope="col">Card ID</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody id="marketPricingTwo"></tbody>
+            </table>
+          </div>
+          <div
+            id="collapseThree"
+            class="tab-pane fade col-md-10 offset-md-1"
+            role="tabpanel"
+            aria-labelledby="collapseThree-tab"
+            style="height: 500px; overflow-x: hidden; overflow-y: auto"
+          >
+            <table class="table table-bordered table-responsive-md">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Card Name</th>
+                  <th scope="col">Card ID</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody id="marketPricingThree"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Call to action-->
     <section class="page-section bg-dark text-white">
@@ -308,6 +428,11 @@
           </div>
         </div>
       </div>
+      <div class="social d-flex justify-content-center">
+        <a class="mx-2" href="https://twitter.com/cardsofwonder"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
     </section>
     <!-- Footer-->
     <footer class="bg-light py-5">
@@ -317,6 +442,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/bootstrap.js"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
