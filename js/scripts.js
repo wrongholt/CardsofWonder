@@ -8,9 +8,9 @@
 //
 
 window.addEventListener("DOMContentLoaded", (event) => {
-  const url = `https://api.airtable.com/v0/${process.env.AirtableBase}/Cards?api_key=${process.env.ApiAirtable}&fields%5B%5D=Card+Name&fields%5B%5D=Rarity&fields%5B%5D=nowPrice&fields%5B%5D=nameID&fields%5B%5D=earlyPrice&filterByFormula=Rarity%3D%22common%22`;
-  const url2 = `https://api.airtable.com/v0/${process.env.AirtableBase}/Cards?api_key=${process.env.ApiAirtable}&fields%5B%5D=Card+Name&fields%5B%5D=Rarity&fields%5B%5D=nowPrice&fields%5B%5D=nameID&fields%5B%5D=earlyPrice&filterByFormula=Rarity%3D%22uncommon%22`;
-  const url3 = `https://api.airtable.com/v0/${process.env.AirtableBase}/Cards?api_key=${process.env.ApiAirtable}&fields%5B%5D=Card+Name&fields%5B%5D=Rarity&fields%5B%5D=nowPrice&fields%5B%5D=nameID&fields%5B%5D=earlyPrice&filterByFormula=Rarity%3D%22rare%22`;
+  const url = `https://api.airtable.com/v0/${secrets.AirtableBase}/Cards?api_key=${secrets.ApiAirtable}&fields%5B%5D=Card+Name&fields%5B%5D=Rarity&fields%5B%5D=nowPrice&fields%5B%5D=nameID&fields%5B%5D=earlyPrice&filterByFormula=Rarity%3D%22common%22`;
+  const url2 = `https://api.airtable.com/v0/${secrets.AirtableBase}/Cards?api_key=${secrets.ApiAirtable}&fields%5B%5D=Card+Name&fields%5B%5D=Rarity&fields%5B%5D=nowPrice&fields%5B%5D=nameID&fields%5B%5D=earlyPrice&filterByFormula=Rarity%3D%22uncommon%22`;
+  const url3 = `https://api.airtable.com/v0/${secrets.AirtableBase}/Cards?api_key=${secrets.ApiAirtable}&fields%5B%5D=Card+Name&fields%5B%5D=Rarity&fields%5B%5D=nowPrice&fields%5B%5D=nameID&fields%5B%5D=earlyPrice&filterByFormula=Rarity%3D%22rare%22`;
   fetch(url)
     .then((response) => {
       const contentType = response.headers.get("content-type");
