@@ -20,8 +20,8 @@ jobs:
         npm install
         npm run-script build
       env:
-        ApiAirtable: ${{ secrets.ApiAirtable }}
-        AirtableBase: ${{ secrets.AirtableBase }}
+        ApiAirtable: ${{ variables.ApiAirtable }}
+        AirtableBase: ${{ variables.AirtableBase }}
 
     - name: Deploy
       uses: wrongholt/github-pages-deploy-action@releases/v3
