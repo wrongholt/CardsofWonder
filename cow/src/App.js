@@ -16,9 +16,6 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 async function getTableData() {
   const url = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
-  const url2 = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
-  const url3 = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
-  const url4 = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
   var response = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "common" }),
@@ -45,7 +42,7 @@ async function getTableData() {
       row.className = "table-danger";
     }
   });
-  var response2 = await fetch(url2, {
+  var response2 = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "uncommon" }),
     headers: { "Content-Type": "application/json" },
@@ -71,7 +68,7 @@ async function getTableData() {
     }
   });
 
-  var response3 = await fetch(url3, {
+  var response3 = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: ["rare", "epic"] }),
     headers: { "Content-Type": "application/json" },
@@ -96,7 +93,7 @@ async function getTableData() {
       row3.insertCell(3).innerHTML = "";
     }
   });
-  var response3 = await fetch(url3, {
+  var response3 = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: ["epic"] }),
     headers: { "Content-Type": "application/json" },
