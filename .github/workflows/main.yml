@@ -20,7 +20,7 @@ jobs:
         env:
           ApiAirtable: ${{ variables.ApiAirtable }}
           AirtableBase: ${{ variables.AirtableBase }}
-          SERVERLESS: ${{ variables.SERVERLESS }}
+          REACT_APP_SERVERLESS: ${{ secrets.REACT_APP_SERVERLESS }}
 
       - name: Deploy
         uses: wrongholt/github-pages-deploy-action@releases/v3
