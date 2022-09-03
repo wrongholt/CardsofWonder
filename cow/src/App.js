@@ -19,7 +19,10 @@ async function getTableData() {
   var response = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "common" }),
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   }).then(function (response) {
     return response.json();
   });
@@ -47,7 +50,10 @@ async function getTableData() {
   var response2 = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "uncommon" }),
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   }).then(function (response) {
     return response.json();
   });
@@ -74,7 +80,10 @@ async function getTableData() {
   var response3 = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "rare" }),
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   }).then(function (response) {
     return response.json();
   });
@@ -100,7 +109,10 @@ async function getTableData() {
   var response4 = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "epic" }),
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   }).then(function (response) {
     return response.json();
   });
