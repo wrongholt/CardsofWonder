@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { Tabs, Tab, TabPane, CloseButton } from "react-bootstrap";
+<<<<<<< HEAD
+=======
+SERVERLESS = lurg73421m;
+>>>>>>> 4b4e3b41 (stupid)
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./js/scripts";
