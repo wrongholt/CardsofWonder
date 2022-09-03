@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Tabs, Tab, TabPane, CloseButton } from "react-bootstrap";
-SERVERLESS = lurg73421m;
+import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "./js/scripts";
 import arrows from "./assets/img/portfolio/fullsize/arrows.png";
 import one from "./assets/img/portfolio/fullsize/1.jpg";
 import two from "./assets/img/portfolio/fullsize/2.jpg";
@@ -16,17 +15,18 @@ const TWITTER_HANDLE = "cardsofwonder";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 async function getTableData() {
-  const url = `https://lurg73421m.execute-api.us-east-1.amazonaws.com/prod/rarity`;
+  const url = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
+  const url2 = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
+  const url3 = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
+  const url4 = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
   var response = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "common" }),
     headers: { "Content-Type": "application/json" },
-  }).then(function (response) {
-    return response.json();
   });
+  const data = await response.json();
+  var theCards = data;
 
-  var theCards = response;
-  console.log("DATA....", theCards);
   var table = document.getElementById("marketPricing");
   theCards.forEach((element, index) => {
     var row = table.insertRow(index);
@@ -45,15 +45,14 @@ async function getTableData() {
       row.className = "table-danger";
     }
   });
-  var response2 = await fetch(url, {
+  var response2 = await fetch(url2, {
     method: "patch",
     body: JSON.stringify({ rarity: "uncommon" }),
     headers: { "Content-Type": "application/json" },
-  }).then(function (response) {
-    return response.json();
   });
+  const data2 = await response2.json();
 
-  var theCards2 = response2;
+  var theCards2 = data2.records;
   var table2 = document.getElementById("marketPricingTwo");
   theCards2.forEach((element, index) => {
     var row2 = table2.insertRow(index);
@@ -72,15 +71,14 @@ async function getTableData() {
     }
   });
 
-  var response3 = await fetch(url, {
+  var response3 = await fetch(url3, {
     method: "patch",
-    body: JSON.stringify({ rarity: "rare" }),
+    body: JSON.stringify({ rarity: ["rare", "epic"] }),
     headers: { "Content-Type": "application/json" },
-  }).then(function (response) {
-    return response.json();
   });
+  const data3 = await response3.json();
 
-  var theCards3 = response3;
+  var theCards3 = data3.records;
   var table3 = document.getElementById("marketPricingThree");
   theCards3.forEach((element, index) => {
     var row3 = table3.insertRow(index);
@@ -98,15 +96,14 @@ async function getTableData() {
       row3.insertCell(3).innerHTML = "";
     }
   });
-  var response4 = await fetch(url, {
+  var response3 = await fetch(url3, {
     method: "patch",
-    body: JSON.stringify({ rarity: "epic" }),
+    body: JSON.stringify({ rarity: ["epic"] }),
     headers: { "Content-Type": "application/json" },
-  }).then(function (response) {
-    return response.json();
   });
+  const data4 = await response3.json();
 
-  var theCards4 = response4;
+  var theCards4 = data4.records;
   var table4 = document.getElementById("marketPricingFour");
   theCards4.forEach((element, index) => {
     var row4 = table4.insertRow(index);
@@ -202,7 +199,7 @@ function App() {
           </div>
         </div>
       </header>
-      <section className="page-section about-section" id="about">
+      <section className="page-section bg-primary" id="about">
         <div className="container px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-lg-8 text-center">

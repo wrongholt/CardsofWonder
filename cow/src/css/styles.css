@@ -4306,13 +4306,6 @@ fieldset:disabled .btn {
 .nav-justified .nav-item .nav-link {
   width: 100%;
 }
-.divider2 {
-  background-color: #6610f2;
-}
-.tab-panel {
-  height: 500px;
-  overflow: auto;
-}
 
 .tab-content > .tab-pane {
   display: none;
@@ -11709,39 +11702,18 @@ hr.divider {
 hr.divider-light {
   background-color: #fff;
 }
-.footer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  /* padding-bottom: 45px; */
-}
 
-.twitter-logo {
-  width: 35px;
-  height: 35px;
-}
-
-.footer-text {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--bs-primary-rgb);
-}
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #fff;
   transition: background-color 0.2s ease;
-  min-height: 3.5rem;
 }
 #mainNav .navbar-brand {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
-  color: var(--bs-primary);
+  color: #212529;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
@@ -11761,30 +11733,28 @@ hr.divider-light {
 }
 @media (min-width: 992px) {
   #mainNav {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: #fff;
-    transition: background-color 0.2s ease;
-    min-height: 3.5rem;
+    box-shadow: none;
+    background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: var(--bs-primary-rgb);
+    color: rgba(255, 255, 255, 0.7);
   }
   #mainNav .navbar-brand:hover {
-    color: var(--bs-primary-rgb);
+    color: #fff;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: var(--bs-primary-rgb);
+    color: rgba(255, 255, 255, 0.7);
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: var(--bs-primary-rgb);
+    color: #fff;
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
   }
   #mainNav.navbar-shrink {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: var(--bs-primary-rgb);
+    background-color: #fff;
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #212529;
@@ -11801,14 +11771,14 @@ hr.divider-light {
 }
 
 header.masthead {
-  padding-top: 36rem;
+  padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
   background: linear-gradient(
       to bottom,
       rgba(11, 16, 109, 0.3) 0%,
       rgba(13, 202, 240, 0.3) 100%
     ),
-    url("./assets/img/COW1.jpg");
+    url("../assets/img/COW1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11949,42 +11919,4 @@ header.masthead .masthead-cow {
 #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption,
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
-}
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
