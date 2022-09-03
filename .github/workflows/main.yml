@@ -23,9 +23,13 @@ jobs:
         ApiAirtable: ${{ variables.ApiAirtable }}
         AirtableBase: ${{ variables.AirtableBase }}
 <<<<<<< HEAD
+<<<<<<< HEAD
         SERVERLESS: ${{ variables.SERVERLESS }}
 =======
 >>>>>>> main2
+=======
+        SERVERLESS: ${{ variables.SERVERLESS }}
+>>>>>>> 0c8796ef (serverless)
 
     - name: Deploy
       uses: wrongholt/github-pages-deploy-action@releases/v3
