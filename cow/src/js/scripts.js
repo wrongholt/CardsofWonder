@@ -6,9 +6,12 @@
 //
 // Scripts
 //
+import SimpleLightbox from "simplelightbox";
 import * as bootstrap from "bootstrap";
 
 window.addEventListener("DOMContentLoaded", (event) => {
+  require("dotenv").config();
+
   // Navbar shrink function
   var navbarShrink = function () {
     const navbarCollapsible = document.body.querySelector("#mainNav");
@@ -48,5 +51,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         navbarToggler.click();
       }
     });
+  });
+
+  // Activate SimpleLightbox plugin for portfolio items
+  new SimpleLightbox({
+    elements: "#portfolio a.portfolio-box",
   });
 });
