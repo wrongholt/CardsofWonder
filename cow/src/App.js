@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Tabs, Tab, TabPane, CloseButton } from "react-bootstrap";
-// import logo from "./logo.svg";
+SERVERLESS = lurg73421m;
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./js/scripts";
@@ -16,7 +16,7 @@ const TWITTER_HANDLE = "cardsofwonder";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 async function getTableData() {
-  const url = `https://${process.env.REACT_APP_SERVERLESS}.execute-api.us-east-1.amazonaws.com/prod/rarity`;
+  const url = `https://lurg73421m.execute-api.us-east-1.amazonaws.com/prod/rarity`;
   var response = await fetch(url, {
     method: "patch",
     body: JSON.stringify({ rarity: "common" }),
