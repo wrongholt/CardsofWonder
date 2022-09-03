@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Tabs, Tab, TabPane, CloseButton } from "react-bootstrap";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import "./js/scripts";
 import arrows from "./assets/img/portfolio/fullsize/arrows.png";
 import one from "./assets/img/portfolio/fullsize/1.jpg";
 import two from "./assets/img/portfolio/fullsize/2.jpg";
@@ -20,10 +21,12 @@ async function getTableData() {
     method: "patch",
     body: JSON.stringify({ rarity: "common" }),
     headers: { "Content-Type": "application/json" },
+  }).then(function (response) {
+    return response.json();
   });
-  const data = await response.json();
-  var theCards = data;
 
+  var theCards = response;
+  console.log("DATA....", theCards);
   var table = document.getElementById("marketPricing");
   theCards.forEach((element, index) => {
     var row = table.insertRow(index);
@@ -46,10 +49,11 @@ async function getTableData() {
     method: "patch",
     body: JSON.stringify({ rarity: "uncommon" }),
     headers: { "Content-Type": "application/json" },
+  }).then(function (response) {
+    return response.json();
   });
-  const data2 = await response2.json();
 
-  var theCards2 = data2.records;
+  var theCards2 = response2;
   var table2 = document.getElementById("marketPricingTwo");
   theCards2.forEach((element, index) => {
     var row2 = table2.insertRow(index);
@@ -70,12 +74,13 @@ async function getTableData() {
 
   var response3 = await fetch(url, {
     method: "patch",
-    body: JSON.stringify({ rarity: ["rare", "epic"] }),
+    body: JSON.stringify({ rarity: "rare" }),
     headers: { "Content-Type": "application/json" },
+  }).then(function (response) {
+    return response.json();
   });
-  const data3 = await response3.json();
 
-  var theCards3 = data3.records;
+  var theCards3 = response3;
   var table3 = document.getElementById("marketPricingThree");
   theCards3.forEach((element, index) => {
     var row3 = table3.insertRow(index);
@@ -93,14 +98,15 @@ async function getTableData() {
       row3.insertCell(3).innerHTML = "";
     }
   });
-  var response3 = await fetch(url, {
+  var response4 = await fetch(url, {
     method: "patch",
-    body: JSON.stringify({ rarity: ["epic"] }),
+    body: JSON.stringify({ rarity: "epic" }),
     headers: { "Content-Type": "application/json" },
+  }).then(function (response) {
+    return response.json();
   });
-  const data4 = await response3.json();
 
-  var theCards4 = data4.records;
+  var theCards4 = response4;
   var table4 = document.getElementById("marketPricingFour");
   theCards4.forEach((element, index) => {
     var row4 = table4.insertRow(index);
@@ -196,7 +202,7 @@ function App() {
           </div>
         </div>
       </header>
-      <section className="page-section bg-primary" id="about">
+      <section className="page-section about-section" id="about">
         <div className="container px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-lg-8 text-center">

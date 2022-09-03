@@ -79,7 +79,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+.about-section {
+  background: linear-gradient(#0dcaf1, #0dcaf0);
+}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -2008,6 +2010,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
+
 .table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
